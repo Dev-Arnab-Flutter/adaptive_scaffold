@@ -32,9 +32,13 @@ Then run:
 
 flutter pub get
 
+```
 
 📄 Usage
+
 1️⃣ AdaptiveScaffold Example
+
+```yaml
 import 'package:flutter/material.dart';
 import 'package:adaptive_scaffold/adaptive_scaffold.dart';
 
@@ -49,15 +53,20 @@ AdaptiveScaffold(
   ),
 );
 
+```
+
 2️⃣ AdaptiveNavigationBar Example
+
+```yaml
 AdaptiveNavigationBar(
   destinations: [
     AdaptiveDestination(icon: Icons.home, label: "Home", body: HomePage()),
     AdaptiveDestination(icon: Icons.settings, label: "Settings", body: SettingsPage()),
   ],
 );
+```
 
-📸 Demo
+<!-- 📸 Demo
 
 Mobile Layout:
 
@@ -68,12 +77,13 @@ Tablet Layout:
 Desktop Layout:
 
 
-You can replace the placeholders with actual screenshots or GIFs of your app.
+You can replace the placeholders with actual screenshots or GIFs of your app. -->
 
 🔎 AdaptiveBuilder Example
 
 Use AdaptiveBuilder to create custom layouts based on screen size:
 
+```yaml
 AdaptiveBuilder(
   builder: (context, layout) {
     switch (layout) {
@@ -86,6 +96,7 @@ AdaptiveBuilder(
     }
   },
 );
+```
 
 🔮 Roadmap
 
@@ -109,15 +120,18 @@ Compatible with Flutter mobile, tablet, and web/desktop apps
 
 📄 License
 
-MIT License © 2025 [Your Name]
-
-
----
-
-✅ **Notes / Next Steps:**
-
-1. Replace `[Your Name]` with your name or organization.  
-2. Replace placeholder screenshots with **actual app screenshots** for better pub.dev presentation.  
-3. You can add **Flutter and CI badges** later if you integrate GitHub Actions.  
+MIT License © 2025 Dev-Arnab-Flutter
 
 ---
+
+<!-- ✅ **Notes / Next Steps:**
+
+1. Replace `[Your Name]` with your name or organization.
+2. Replace placeholder screenshots with **actual app screenshots** for better pub.dev presentation.
+3. You can add **Flutter and CI badges** later if you integrate GitHub Actions.
+
+--- -->
+
+```
+
+```

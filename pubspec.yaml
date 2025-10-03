@@ -1,8 +1,8 @@
 name: adaptive_scaffold
 description: A drop-in replacement for Scaffold with adaptive layouts (mobile, tablet, desktop).
 version: 0.0.1
-homepage: https://github.com/yourusername/adaptive_scaffold
-repository: https://github.com/yourusername/adaptive_scaffold
+homepage: https://github.com/Dev-Arnab-Flutter/adaptive_scaffold
+repository: https://github.com/Dev-Arnab-Flutter/adaptive_scaffold
 
 environment:
   sdk: ">=2.18.0 <4.0.0"
