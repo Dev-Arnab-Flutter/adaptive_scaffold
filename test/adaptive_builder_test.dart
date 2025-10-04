@@ -1,5 +1,4 @@
-import 'package:adaptive_scaffold/src/adaptive_builder.dart';
-import 'package:adaptive_scaffold/src/breakpoints.dart';
+import 'package:adapto_scaffold/adapto_scaffold.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
 
@@ -9,8 +8,8 @@ void main() {
       MaterialApp(
         home: MediaQuery(
           data: MediaQueryData(size: Size(500, 800)), // mobile
-          child: AdaptiveBuilder(
-            builder: (BuildContext context, AdaptiveLayoutType layout) {
+          child: AdaptoBuilder(
+            builder: (BuildContext context, AdaptoLayoutType layout) {
               return Text('Mobile Builder');
             },
           ),
@@ -27,8 +26,8 @@ void main() {
       MaterialApp(
         home: MediaQuery(
           data: MediaQueryData(size: Size(900, 600)),
-          child: AdaptiveBuilder(
-            builder: (BuildContext context, AdaptiveLayoutType layout) {
+          child: AdaptoBuilder(
+            builder: (BuildContext context, AdaptoLayoutType layout) {
               return Text('Tablet Builder');
             },
           ),
@@ -42,8 +41,8 @@ void main() {
       MaterialApp(
         home: MediaQuery(
           data: MediaQueryData(size: Size(1600, 900)),
-          child: AdaptiveBuilder(
-            builder: (BuildContext context, AdaptiveLayoutType layout) {
+          child: AdaptoBuilder(
+            builder: (BuildContext context, AdaptoLayoutType layout) {
               return Text('Desktop Builder');
             },
           ),
@@ -54,7 +53,7 @@ void main() {
   });
 
   test('Breakpoints default values', () {
-    expect(AdaptiveBreakpoints.mobile, 600);
-    expect(AdaptiveBreakpoints.tablet, 1024);
+    expect(AdaptoBreakpoints.mobile, 600);
+    expect(AdaptoBreakpoints.tablet, 1024);
   });
 }

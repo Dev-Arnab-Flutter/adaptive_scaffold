@@ -1,13 +1,14 @@
 import 'package:flutter/material.dart';
+
 import 'breakpoints.dart';
 
 /// A destination item for adaptive navigation
-class AdaptiveDestination {
+class AdaptoDestination {
   final IconData icon;
   final String label;
   final Widget body;
 
-  const AdaptiveDestination({
+  const AdaptoDestination({
     required this.icon,
     required this.label,
     required this.body,
@@ -18,21 +19,21 @@ class AdaptiveDestination {
 /// BottomNavigationBar (mobile),
 /// NavigationRail (tablet),
 /// NavigationDrawer (desktop).
-class AdaptiveNavigationBar extends StatefulWidget {
-  final List<AdaptiveDestination> destinations;
+class AdaptoNavigationBar extends StatefulWidget {
+  final List<AdaptoDestination> destinations;
   final int initialIndex;
 
-  const AdaptiveNavigationBar({
+  const AdaptoNavigationBar({
     super.key,
     required this.destinations,
     this.initialIndex = 0,
   });
 
   @override
-  State<AdaptiveNavigationBar> createState() => _AdaptiveNavigationBarState();
+  State<AdaptoNavigationBar> createState() => _AdaptoNavigationBarState();
 }
 
-class _AdaptiveNavigationBarState extends State<AdaptiveNavigationBar> {
+class _AdaptoNavigationBarState extends State<AdaptoNavigationBar> {
   late int _selectedIndex;
 
   @override
@@ -41,12 +42,12 @@ class _AdaptiveNavigationBarState extends State<AdaptiveNavigationBar> {
     _selectedIndex = widget.initialIndex;
   }
 
-  AdaptiveLayoutType _getLayoutType(BuildContext context) {
+  AdaptoLayoutType _getLayoutType(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    if (width < AdaptiveBreakpoints.mobile) return AdaptiveLayoutType.mobile;
-    if (width < AdaptiveBreakpoints.tablet) return AdaptiveLayoutType.tablet;
-    return AdaptiveLayoutType.desktop;
+    if (width < AdaptoBreakpoints.mobile) return AdaptoLayoutType.mobile;
+    if (width < AdaptoBreakpoints.tablet) return AdaptoLayoutType.tablet;
+    return AdaptoLayoutType.desktop;
   }
 
   @override
@@ -54,7 +55,7 @@ class _AdaptiveNavigationBarState extends State<AdaptiveNavigationBar> {
     final layout = _getLayoutType(context);
 
     switch (layout) {
-      case AdaptiveLayoutType.mobile:
+      case AdaptoLayoutType.mobile:
         return Scaffold(
           body: widget.destinations[_selectedIndex].body,
           bottomNavigationBar: BottomNavigationBar(
@@ -68,7 +69,7 @@ class _AdaptiveNavigationBarState extends State<AdaptiveNavigationBar> {
             onTap: (i) => setState(() => _selectedIndex = i),
           ),
         );
-      case AdaptiveLayoutType.tablet:
+      case AdaptoLayoutType.tablet:
         return Row(
           children: [
             NavigationRail(
@@ -83,7 +84,7 @@ class _AdaptiveNavigationBarState extends State<AdaptiveNavigationBar> {
             Expanded(child: widget.destinations[_selectedIndex].body),
           ],
         );
-      case AdaptiveLayoutType.desktop:
+      case AdaptoLayoutType.desktop:
         return Row(
           children: [
             Drawer(

@@ -1,4 +1,4 @@
-name: adaptive_scaffold
+name: adapto_scaffold
 description: A drop-in replacement for Scaffold with adaptive layouts (mobile, tablet, desktop).
 version: 0.0.1
 homepage: https://github.com/Dev-Arnab-Flutter/adaptive_scaffold

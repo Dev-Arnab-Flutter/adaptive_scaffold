@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+
 import 'breakpoints.dart';
 
 /// Adaptive Scaffold: a drop-in replacement for Scaffold
-class AdaptiveScaffold extends StatelessWidget {
+class AdaptoScaffold extends StatelessWidget {
   final PreferredSizeWidget? appBar;
 
   final Widget? mobileBody;
@@ -16,7 +17,7 @@ class AdaptiveScaffold extends StatelessWidget {
 
   final Color? backgroundColor;
 
-  const AdaptiveScaffold({
+  const AdaptoScaffold({
     super.key,
     this.appBar,
     this.mobileBody,
@@ -29,12 +30,12 @@ class AdaptiveScaffold extends StatelessWidget {
     this.backgroundColor,
   });
 
-  AdaptiveLayoutType _getLayoutType(BuildContext context) {
+  AdaptoLayoutType _getLayoutType(BuildContext context) {
     final width = MediaQuery.of(context).size.width;
 
-    if (width < AdaptiveBreakpoints.mobile) return AdaptiveLayoutType.mobile;
-    if (width < AdaptiveBreakpoints.tablet) return AdaptiveLayoutType.tablet;
-    return AdaptiveLayoutType.desktop;
+    if (width < AdaptoBreakpoints.mobile) return AdaptoLayoutType.mobile;
+    if (width < AdaptoBreakpoints.tablet) return AdaptoLayoutType.tablet;
+    return AdaptoLayoutType.desktop;
   }
 
   @override
@@ -43,13 +44,13 @@ class AdaptiveScaffold extends StatelessWidget {
 
     Widget? body;
     switch (layoutType) {
-      case AdaptiveLayoutType.mobile:
+      case AdaptoLayoutType.mobile:
         body = mobileBody ?? tabletBody ?? desktopBody;
         break;
-      case AdaptiveLayoutType.tablet:
+      case AdaptoLayoutType.tablet:
         body = tabletBody ?? mobileBody ?? desktopBody;
         break;
-      case AdaptiveLayoutType.desktop:
+      case AdaptoLayoutType.desktop:
         body = desktopBody ?? tabletBody ?? mobileBody;
         break;
     }

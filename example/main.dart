@@ -1,5 +1,5 @@
+import 'package:adapto_scaffold/adapto_scaffold.dart';
 import 'package:flutter/material.dart';
-import 'package:adaptive_scaffold/adaptive_scaffold.dart';
 
 void main() => runApp(const MyApp());
 
@@ -21,7 +21,7 @@ class DemoHomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return AdaptiveScaffold(
+    return AdaptoScaffold(
       appBar: AppBar(title: const Text("Adaptive Scaffold")),
       mobileBody: const Center(child: Text("📱 Mobile Layout")),
       tabletBody: const Center(child: Text("📟 Tablet Layout")),
@@ -30,13 +30,13 @@ class DemoHomePage extends StatelessWidget {
         onPressed: () {},
         child: const Icon(Icons.add),
       ),
-      bottomNavigationBar: AdaptiveNavigationBar(
+      bottomNavigationBar: AdaptoNavigationBar(
         destinations: const [
-          AdaptiveDestination(
+          AdaptoDestination(
               icon: Icons.home,
               label: "Home",
               body: Center(child: Text("Home Page"))),
-          AdaptiveDestination(
+          AdaptoDestination(
               icon: Icons.settings,
               label: "Settings",
               body: Center(child: Text("Settings Page"))),
